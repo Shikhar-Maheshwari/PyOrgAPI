@@ -3,7 +3,7 @@ from .models import Employee, Department, Transaction
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('user', 'phone', 'designation', 'department', 'manager')
+    list_display = ('user','email', 'phone', 'designation', 'department', 'manager')
     search_fields = ('user__username', 'user__first_name', 'user__last_name', 'designation')
     list_filter = ('department',)
 

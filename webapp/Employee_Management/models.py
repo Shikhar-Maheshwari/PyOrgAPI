@@ -12,6 +12,7 @@ class Department(models.Model):
 
 class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email= models.EmailField(unique=True,blank=True, null=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
     designation = models.CharField(max_length=100, blank=True, null=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
